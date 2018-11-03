@@ -36,9 +36,13 @@ Credits
 Explanation
 -----------
 In this case I want to test an external library written in JS.
+
 At runtime, in web-browser the library is imported via CDN.
+
 So i can't load it via a Module Loader or simply via a Require directive.
+
 So I do this:
+
 - edit `jest.config.js` file and added the option `setupFiles` with the value `./tests/dependency.js`
 - create the file `./tests/dependency.js` where i put this line: `global.MyLib = require("../MyLib/MyLib.js");`
   this line say to Jest to add to the global  `global` variable the property `MyLib` with the result of the import via require.
