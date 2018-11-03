@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es5",
+    //"module": "CommonJs", The default when the terget is es5 or es3!
+    "lib": [
+      "es5",
+      "es2015",
+      "dom"
+    ]
+  }
+}
