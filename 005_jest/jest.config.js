@@ -3,5 +3,5 @@ module.exports = {
     // testEnvironment: 'node',
     verbose: true,
     cacheDirectory: '.jest/cache',
-    setupFiles : ["./MyLib/MyLib.js"]
+    setupFiles : ["./tests/dependency.js"]
 };

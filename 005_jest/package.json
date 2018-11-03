@@ -4,7 +4,8 @@
   "description": "Jest\r =====",
   "main": "index.js",
   "scripts": {
-    "test": "tsc && jest"
+    "test": "jest",
+    "clear_jest": "jest --clearCache"
   },
   "author": "",
   "license": "ISC",
