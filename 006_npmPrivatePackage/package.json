@@ -1,0 +1,13 @@
+{
+  "name": "my-lib-pkg",
+  "version": "1.0.1",
+  "description": "A test Npm package",
+  "main": "./dist/MyLib.js",
+  "types": "./dist/MyLib.d.ts",
+  "scripts": {
+  },
+  "author": "IGionny",
+  "license": "ISC",
+  "devDependencies": {
+  }
+}
