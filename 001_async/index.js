@@ -89,6 +89,7 @@ new Promise(function (res, rej) {
 })
     .then(function (res) {
     //The use of an undeclared variable will cause a rejection
+    //this will end to the first .Catch
     // @ts-ignore
     aa = 2;
     console.log(res);
@@ -100,3 +101,37 @@ new Promise(function (res, rej) {
     .catch(function (error) {
     console.log('ERROR:', error.message);
 });
+//--------------------------------
+function CallAnotherError() {
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, CallError()];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function CallTheCallError() {
+    return __awaiter(this, void 0, void 0, function () {
+        var e_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, , 3]);
+                    return [4 /*yield*/, CallAnotherError()];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/, "4"];
+                case 2:
+                    e_1 = _a.sent();
+                    console.error("CallTheCallError Say error:", e_1);
+                    return [3 /*break*/, 3];
+                case 3: return [2 /*return*/, "3"];
+            }
+        });
+    });
+}
+CallTheCallError().then(function (result) { return console.log("CallTheCallError result:", result); });
